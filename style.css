@@ -1,0 +1,112 @@
+html {
+  /* The number of cells in the width of the grid */
+  --grid-width: 10;
+}
+
+body {
+  margin: 0;
+  background: #458;
+  display: flex;
+  justify-content: center;
+  font-family: sans-serif;
+}
+
+main {
+  display: flex;
+  flex-flow: column;
+  --content-width: 750px;
+  width: var(--content-width);
+  --page-padding: 40px;
+  min-height: 100vh;
+  background: white;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+#page-title {
+  background: #ddd;
+  padding: 10px var(--page-padding);
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+@media print {
+  #page-title {
+    display: none;
+  }
+}
+
+#options {
+  display: flex;
+  background: #ddd;
+  padding: 12px var(--page-padding);
+}
+
+@media print {
+  #options {
+    display: none;
+  }
+}
+
+#amount-filled-in-label {
+  font-size: 1.05rem;
+  padding-top: 5px;
+}
+
+#refresh, #print {
+  background: none;
+  border: 1px solid transparent;
+  opacity: 0.8;
+  cursor: pointer;
+  border-radius: 2px;
+  padding-top: 3px;
+}
+
+#refresh:hover, #print:hover {
+  background: #eee;
+  border: 1px solid #555;
+}
+
+#refresh:active, #print:active {
+  box-shadow: 0 0 14px rgba(0, 0, 0, 0.15) inset, 0 0 2px rgba(0, 0, 0, 0.5) inset;
+}
+
+#refresh>img, #print>img {
+  width: 20px;
+}
+
+#content-title {
+  margin: 30px var(--page-padding);
+  color: #222;
+  font-size: 1.8rem;
+}
+
+#grid {
+  display: grid;
+  grid-template-columns: repeat(var(--grid-width), 1fr);
+  margin-left: var(--page-padding);
+  --grid-size: calc(var(--content-width) - calc(var(--page-padding) * 2));
+  --border-settings: 1px solid black;
+  width: var(--grid-size);
+  height: var(--grid-size);
+  border-bottom: var(--border-settings);
+  border-right: var(--border-settings);
+  margin-bottom: 30px;
+}
+
+#grid .cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: var(--border-settings);
+  border-left: var(--border-settings);
+  font-size: 2rem;
+}
+
+#grid .cell.hidden {
+  color: transparent;
+  user-select: none;
+}
+
+.hoz-spacer {
+  flex: 1;
+}
