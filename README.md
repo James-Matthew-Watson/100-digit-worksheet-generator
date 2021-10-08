@@ -1,1 +1,1 @@
-View the website [here](https://thescottyjam.github.io/100-digit-worksheet-generator/).
+View the website [here](https://github.com/James-Matthew-Watson/100-digit-worksheet-generator/).
